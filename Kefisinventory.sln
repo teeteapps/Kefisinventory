@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kefisinventory", "Kefisinventory\Kefisinventory.csproj", "{BBEBC1CF-73D5-4DDB-B4A5-FAE94CA905E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBL", "DBL\DBL.csproj", "{A92EF967-89BF-48B2-A85C-2EFC5E92586C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBEBC1CF-73D5-4DDB-B4A5-FAE94CA905E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBEBC1CF-73D5-4DDB-B4A5-FAE94CA905E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBEBC1CF-73D5-4DDB-B4A5-FAE94CA905E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBEBC1CF-73D5-4DDB-B4A5-FAE94CA905E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92EF967-89BF-48B2-A85C-2EFC5E92586C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92EF967-89BF-48B2-A85C-2EFC5E92586C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92EF967-89BF-48B2-A85C-2EFC5E92586C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92EF967-89BF-48B2-A85C-2EFC5E92586C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00871E2E-9B2F-434A-BDFB-C9224D7FD902}
+	EndGlobalSection
+EndGlobal
