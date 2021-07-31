@@ -1,4 +1,5 @@
 ﻿using DBL;
+using DBL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,11 @@ namespace Kefisinventory.Controllers
             var data = await bl.Getallproductslist();
             return View(data);
         }
-        [HttpGet]
         [HttpPost]
-        public async Task<IActionResult> Makeasale(long id)
+        public async Task<JsonResult> Makeasale(long id)
         {
-            var resp = await bl.Makeasale(id);
-            return RedirectToAction("Productlist");
+             var resp = await bl.Makeasale(id);
+            return Json(resp);
         }
 
         public async Task<IActionResult> Productreorderunprocessedlist()
@@ -37,12 +37,12 @@ namespace Kefisinventory.Controllers
             var data = await bl.Productreorderprocessedlist();
             return View(data);
         }
-        [HttpGet]
         [HttpPost]
-        public async Task<IActionResult> Makeadispatch(long id, long productid,int quantity)
+        public async Task<JsonResult> Makeadispatch(long id, long productid,int quantity)
         {
             var resp = await bl.Makeadispatch(id, productid, quantity);
-            return RedirectToAction("Productreorderprocessedlist");
+            return Json(resp);
+            
         }
     }
 }
