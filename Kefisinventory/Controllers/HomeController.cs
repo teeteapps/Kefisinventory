@@ -77,7 +77,8 @@ namespace Kefisinventory.Controllers
             UserDataModel serializeModel = new UserDataModel
             {
                 UserCode = user.Usercode,
-                ShopName = user.Fullname
+                ShopName = user.Fullname,
+                profilecode = user.profilecode
             };
 
             string userData = JsonConvert.SerializeObject(serializeModel);
