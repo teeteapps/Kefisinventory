@@ -10,5 +10,6 @@ namespace DBL.UOW
     public interface IUnitOfWork
     {
         IProductRepository ProductRepository { get; }
+        ISecurityRepository SecurityRepository { get; }
     }
 }

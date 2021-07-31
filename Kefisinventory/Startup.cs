@@ -38,8 +38,8 @@ namespace Kefisinventory
             })
            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, x =>
            {
-               x.AccessDeniedPath = "/Account/AccessDenied/";
-               x.LoginPath = "/Account/Login/";
+               x.AccessDeniedPath = "/Home/AccessDenied/";
+               x.LoginPath = "/Home/Login/";
            });
             services.AddDetectionCore();
             services.AddMvc();
@@ -73,7 +73,7 @@ namespace Kefisinventory
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=index}/{code=1}");
+                    pattern: "{controller=Home}/{action=Login}/{code=1}");
             });
         }
     }

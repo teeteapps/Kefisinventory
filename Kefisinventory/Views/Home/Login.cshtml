@@ -1,0 +1,46 @@
+﻿@model Loginviewmodel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-4">
+                <div class="card">
+                    <form asp-action="Login" asp-controller="Home" method="post" asp-route-returnurl="@ViewData["ReturnUrl"]">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label asp-for="Emailaddress"></label>
+                                    <input asp-for="Emailaddress" class="form-control form-control-sm" />
+                                    <span asp-validation-for="Emailaddress" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label asp-for="Password"></label>
+                                    <input asp-for="Password" class="form-control form-control-sm" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-2 float-end">
+                                <div class="col-sm-12 float-end">
+                                    <input class="btn btn-sm btn-info float-end" value="Login" type="submit" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

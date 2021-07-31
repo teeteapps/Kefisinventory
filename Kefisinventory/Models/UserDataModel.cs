@@ -10,5 +10,6 @@ namespace Kefisinventory.Models
         public long Id { get; set; }
         public long UserCode { get; set; }
         public string ShopName { get; set; }
+        public int profilecode { get; set; }
     }
 }

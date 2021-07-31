@@ -13,6 +13,7 @@ namespace DBL.UOW
         private bool _disposed;
 
         private IProductRepository productRepository;
+        private ISecurityRepository securityRepository;
 
 
         public UnitOfWork(string connectionString)
@@ -24,10 +25,14 @@ namespace DBL.UOW
         {
             get { return productRepository ?? (productRepository = new ProductRepository(connString)); }
         }
-        
+        public ISecurityRepository SecurityRepository
+        {
+            get { return securityRepository ?? (securityRepository = new SecurityRepository(connString)); }
+        }
         public void Reset()
         {
             productRepository = null;
+            securityRepository = null;
         }
 
         public void Dispose()
