@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top:200px">
             <div class="col-sm-4 offset-4">
                 <div class="card">
                     <form asp-action="Login" asp-controller="Home" method="post" asp-route-returnurl="@ViewData["ReturnUrl"]">
@@ -31,9 +31,9 @@
                                     <span asp-validation-for="Password" class="text-danger"></span>
                                 </div>
                             </div>
-                            <div class="row mt-2 float-end">
+                            <div class="row mt-2 mb-2 float-end">
                                 <div class="col-sm-12 float-end">
-                                    <input class="btn btn-sm btn-info float-end" value="Login" type="submit" />
+                                    <input class="btn btn-sm btn-info float-end text-white" value="Login" type="submit" />
                                 </div>
                             </div>
                         </div>
