@@ -49,13 +49,16 @@ namespace DBL.Repository
                 return connection.Query<Companypurchase>(FindStatement(Companypurchase.TableName, "Orderstatus"), param: new { Id = "processed" }).ToList();
             }
         }
-        public BaseEntity Makeadispatch(long id)
+        public BaseEntity Makeadispatch(long id, long productid,int quantity)
         {
             using (var connection = new SqlConnection(_connString))
             {
                 connection.Open();
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@id", id);
+                parameters.Add("@productid", productid);
+                parameters.Add("@quantity", quantity);
+
                 return connection.Query<BaseEntity>("Usp_Makeadispatch", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
             }
         }

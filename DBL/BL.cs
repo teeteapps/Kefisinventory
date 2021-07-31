@@ -87,11 +87,11 @@ namespace DBL
                 return Resp;
             });
         }
-        public async Task<BaseEntity> Makeadispatch(long id)
+        public async Task<BaseEntity> Makeadispatch(long id, long productid,int quantity)
         {
             return await Task.Run(() =>
             {
-                var Resp = db.ProductRepository.Makeadispatch(id);
+                var Resp = db.ProductRepository.Makeadispatch(id, productid, quantity);
                 return Resp;
             });
         }

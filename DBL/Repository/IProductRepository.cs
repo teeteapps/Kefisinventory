@@ -14,6 +14,6 @@ namespace DBL.Repository
         IEnumerable<Companypurchase> Productreorderunprocessedlist();
         IEnumerable<Companypurchase> Productreorderprocessedlist();
 
-        BaseEntity Makeadispatch(long id);
+        BaseEntity Makeadispatch(long id, long productid, int quantity);
     }
 }

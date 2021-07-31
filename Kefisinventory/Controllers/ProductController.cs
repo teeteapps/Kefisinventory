@@ -39,9 +39,9 @@ namespace Kefisinventory.Controllers
         }
         [HttpGet]
         [HttpPost]
-        public async Task<IActionResult> Makeadispatch(long id)
+        public async Task<IActionResult> Makeadispatch(long id, long productid,int quantity)
         {
-            var resp = await bl.Makeadispatch(id);
+            var resp = await bl.Makeadispatch(id, productid, quantity);
             return RedirectToAction("Productreorderprocessedlist");
         }
     }

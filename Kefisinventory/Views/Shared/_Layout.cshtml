@@ -24,13 +24,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Kefisinventory</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Kefisinventory</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Dashboard">Kefisinventory</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,6 +53,17 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Productreorderunprocessedlist">Unprocessed Order</a>
                             </li>
                         }
+                    </ul>
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-user-circle">&nbsp;</i><span>@currentUserData.ShopName</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right border-0 elevation-0" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li class="dropdown-divider"></li>
+                                <li><a class="fa fa-lock dropdown-item" href="@Url.Action("Logout","Home")">&nbsp;&nbsp;Log out</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
