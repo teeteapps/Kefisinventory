@@ -1,5 +1,9 @@
+using DBL.Models;
+using DBL.Repository;
+using Kefisinventory;
 using Kefisinventory.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -7,30 +11,40 @@ namespace UnitTestProject1
 {
     public class UnitTest1
     {
+        
         private ProductController controller;
+        private ProductRepository repo = null;
+        public UnitTest1()
+        {
+            if (repo == null)
+            {
+                repo = new ProductRepository(Util.GetDbConnString());
+            }
+        }
+
         [Fact]
-        public async Task MakeasaleTest()
+        public void MakeasaleTest()
         {
             // Arrange
             var productid = 2;
             // Act
-            var result = await controller.Makeasale(productid);
+            var result = repo.Makeasale(productid); ;
 
             // Assert
-            var viewResult = Assert.IsType<NotFoundResult>(result);
+            Assert.NotEmpty(result.RespMessage);
         }
         [Fact]
-        public async Task MakeadisptchTest()
+        public void MakeadisptchTest()
         {
             // Arrange
             var orderid = 2;
             var productid = 2;
             var quantity = 2;
             // Act
-            var result = await controller.Makeadispatch(orderid, productid, quantity);
+            var result =  repo.Makeadispatch(orderid, productid, quantity);
 
             // Assert
-            var viewResult = Assert.IsType<NotFoundResult>(result);
+            Assert.NotEmpty(result.RespMessage);
         }
     }
 }

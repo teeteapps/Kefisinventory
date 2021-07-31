@@ -21,9 +21,9 @@ namespace Kefisinventory.Controllers
             return View(data);
         }
         [HttpPost]
-        public async Task<JsonResult> Makeasale(long id)
+        public async Task<JsonResult> Makeasale(long? id)
         {
-             var resp = await bl.Makeasale(id);
+            var resp = await bl.Makeasale(id.Value);
             return Json(resp);
         }
 
@@ -38,9 +38,9 @@ namespace Kefisinventory.Controllers
             return View(data);
         }
         [HttpPost]
-        public async Task<JsonResult> Makeadispatch(long id, long productid,int quantity)
+        public async Task<JsonResult> Makeadispatch(long? id, long? productid,int? quantity)
         {
-            var resp = await bl.Makeadispatch(id, productid, quantity);
+            var resp = await bl.Makeadispatch(id.Value, productid.Value, quantity.Value);
             return Json(resp);
             
         }
